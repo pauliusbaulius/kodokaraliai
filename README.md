@@ -1,1 +1,1 @@
-# kodokarali-karalyst-
+PASKAITUKAS.TXT
