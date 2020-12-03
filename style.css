@@ -2,6 +2,13 @@
     font-family: 'IBM Plex Mono', monospace;
 }
 
+img {
+    padding: 2vh;
+    max-width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 h1 {
 
@@ -22,7 +29,19 @@ nav {
 }
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
+
+footer {
+    text-align: center;
+    font-size: 80%;
+    padding: 4vh 0;
+}
+
+#tldr {
+    font-size: 115%;
+}
+
+/* Turbo smirda, nes vietoj to kad patapšnotų CSS, jis tapšnoja savo 2-bit sound machines... */
