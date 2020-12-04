@@ -7,12 +7,12 @@ on:
     branches: [ master ]
 
 jobs:
-  minify-inline:
-    runs-on: ubuntu-latest
-    steps:
+  #minify-inline:
+   # runs-on: ubuntu-latest
+    #steps:
       # Kažkoks minifier, reik pratestuot kaip veikia ;)
-      - uses: anthonyftwang/minify-action@v1.0.0
-      - name: minify resources
+     # - uses: anthonyftwang/minify-action@v1.0.0
+      #- name: minify resources
 
 
       # Pabandom inlinint CSS, nes taip kiečiau.
