@@ -1,0 +1,23 @@
+name: Karalių Skriptas
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  rsync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2 # need this to access repo!
+      - name: rsync to vps
+        env:
+          KEY: ${{ secrets.SSH_KEY }}
+          DESTINATION_PATH: ${{ secrets.DESTINATION_PATH }}
+        run: |
+          echo "setting up private keys..."
+          mkdir ~/.ssh
+          echo "$KEY" > ~/.ssh/key
+          chmod 600 ~/.ssh/key
+          echo "github action rsync: $(date +%s)" > info
+          echo "transferring data..."
+          rsync --progress -rvz -e "ssh -i ~/.ssh/key -o StrictHostKeyChecking=no" ${GITHUB_WORKSPACE}/* "$DESTINATION_PATH"
