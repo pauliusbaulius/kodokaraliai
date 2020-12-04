@@ -16,10 +16,10 @@ jobs:
 
 
       # Pabandom inlinint CSS, nes taip kiečiau.
-      - uses: ZacJW/inline-css-action@1.0.0
-      - name: inline css
-        with:
-          files: '["*.html"]'
+      #- uses: ZacJW/inline-css-action@1.0.0
+      #- name: inline css
+      # with:
+      #    files: '["*.html"]'
   # Kubo mastermind rsync to /var/www
   rsync:
     runs-on: ubuntu-latest
