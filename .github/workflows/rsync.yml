@@ -1,9 +1,10 @@
 name: Karalių Skriptas
 on:
+  # thank you retards for renaming it to "main" branch :)))
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 jobs:
   rsync:
     runs-on: ubuntu-latest
