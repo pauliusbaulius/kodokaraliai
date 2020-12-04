@@ -1,31 +1,15 @@
 name: Karalių Skriptas
-
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
 jobs:
-  #minify-inline:
-   # runs-on: ubuntu-latest
-    #steps:
-      # Kažkoks minifier, reik pratestuot kaip veikia ;)
-     # - uses: anthonyftwang/minify-action@v1.0.0
-      #- name: minify resources
-
-
-      # Pabandom inlinint CSS, nes taip kiečiau.
-      #- uses: ZacJW/inline-css-action@1.0.0
-      #- name: inline css
-      # with:
-      #    files: '["*.html"]'
-  # Kubo mastermind rsync to /var/www
   rsync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2 # need this to access repo!
-      - name: rsync to vps
+      - name: Rsync to VPS.
         env:
           KEY: ${{ secrets.SSH_KEY }}
           DESTINATION_PATH: ${{ secrets.DESTINATION_PATH }}
@@ -37,5 +21,5 @@ jobs:
           
           echo "github action rsync: $(date +%s)" > info
           
-          echo "trasnferring data..."
-          rsync --progress -rvz -e "ssh -i ~/.ssh/key -o StrictHostKeyChecking=no" ${GITHUB_WORKSPACE}/* "$DESTINATION_PATH"
+          echo "Trasnferring data..."
+          rsync --progress -rvz -e "ssh -i ~/.ssh/key -o StrictHostKeyChecking=no" ${GITHUB_WORKSPACE}/html/* info "$DESTINATION_PATH"
