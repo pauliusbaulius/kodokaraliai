@@ -11,12 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Kažkoks minifier, reik pratestuot kaip veikia ;)
-      - name: minify resources
       - uses: anthonyftwang/minify-action@v1.0.0
+      - name: minify resources
+
 
       # Pabandom inlinint CSS, nes taip kiečiau.
-      - name: inline css
       - uses: ZacJW/inline-css-action@1.0.0
+      - name: inline css
         with:
           files: '["*.html"]'
   # Kubo mastermind rsync to /var/www
